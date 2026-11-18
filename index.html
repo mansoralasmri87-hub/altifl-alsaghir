@@ -70,26 +70,30 @@
             </div>
 
             <div class="characters-flex">
-                <!-- رسومات طفلة مبهجة وواضحة -->
-                <svg width="130" height="160" viewBox="0 0 200 250">
-                    <circle cx="100" cy="75" r="45" fill="#fbcfe8"/>
-                    <path d="M50,70 Q100,10 150,70 Q150,130 120,130 Q100,100 80,130 Q50,130 50,70 Z" fill="#881337"/>
-                    <circle cx="85" cy="70" r="6" fill="#1e293b"/><circle cx="115" cy="70" r="6" fill="#1e293b"/>
-                    <path d="M85,90 Q100,105 115,90" fill="none" stroke="#f43f5e" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M65,120 L135,120 L145,195 L55,195 Z" fill="#f43f5e"/>
-                    <circle cx="100" cy="150" r="10" fill="#fff"/>
+                <!-- رسمة طفلة كرتونية لطيفة -->
+                <svg width="140" height="160" viewBox="0 0 200 200">
+                    <circle cx="100" cy="70" r="40" fill="#ffd1b3"/>
+                    <!-- شعر الطفلة -->
+                    <path d="M60,60 Q100,10 140,60 Q150,110 120,110 Q100,85 80,110 Q50,110 60,60 Z" fill="#5c3a21"/>
+                    <circle cx="85" cy="65" r="5" fill="#333"/><circle cx="115" cy="65" r="5" fill="#333"/>
+                    <path d="M88,82 Q100,95 112,82" fill="none" stroke="#ff6b81" stroke-width="3" stroke-linecap="round"/>
+                    <!-- الفستان الملون الجميل -->
+                    <path d="M70,110 L130,110 L140,170 L60,170 Z" fill="#ff6b81"/>
+                    <circle cx="100" cy="135" r="6" fill="#fff"/>
                 </svg>
 
                 <button class="start-btn" onclick="goTo('slide2')">ابدأ المغامرة 🚀</button>
 
-                <!-- رسومات طفل كرتوني مبهج -->
-                <svg width="130" height="160" viewBox="0 0 200 250">
-                    <circle cx="100" cy="75" r="45" fill="#bae6fd"/>
-                    <path d="M55,65 Q100,20 145,65 Q130,40 100,35 Q70,40 55,65 Z" fill="#0f172a"/>
-                    <circle cx="85" cy="70" r="6" fill="#1e293b"/><circle cx="115" cy="70" r="6" fill="#1e293b"/>
-                    <path d="M85,90 Q100,105 115,90" fill="none" stroke="#0284c7" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M65,120 L135,120 L145,195 L55,195 Z" fill="#38bdf8"/>
-                    <circle cx="100" cy="150" r="10" fill="#fff"/>
+                <!-- رسمة طفل كرتوني لطيف -->
+                <svg width="140" height="160" viewBox="0 0 200 200">
+                    <circle cx="100" cy="70" r="40" fill="#ffd1b3"/>
+                    <!-- شعر الولد -->
+                    <path d="M60,55 Q100,20 140,55 Q125,40 100,35 Q75,40 60,55 Z" fill="#2c2c2c"/>
+                    <circle cx="85" cy="65" r="5" fill="#333"/><circle cx="115" cy="65" r="5" fill="#333"/>
+                    <path d="M88,82 Q100,95 112,82" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+                    <!-- التيشرت والبنطال -->
+                    <path d="M70,110 L130,110 L140,170 L60,170 Z" fill="#38bdf8"/>
+                    <circle cx="100" cy="135" r="6" fill="#fff"/>
                 </svg>
             </div>
 
@@ -127,117 +131,4 @@
             </div>
 
             <div class="options-container">
-                <div class="choice-card" onclick="wrongChoice()">لعب ومرح في الحديقة</div>
-                <div class="choice-card" onclick="rightChoice('slide4')">حق الصحة والعلاج 🩺</div>
-            </div>
-
-            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
-        </div>
-
-        <!-- الشريحة 4: حق التعليم -->
-        <div id="slide4" class="slide hidden">
-            <div></div>
-            <div class="question-box">
-                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">📚 الموقف الثاني: طفل يحمل حقيبته متوجهاً للمدرسة ليتعلم العلوم</h2>
-                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق الرائع؟</p>
-            </div>
-
-            <div class="options-container">
-                <div class="choice-card" onclick="rightChoice('slide5')">حق التعليم والمعرفة 📚</div>
-                <div class="choice-card" onclick="wrongChoice()">حق النوم طوال اليوم</div>
-            </div>
-
-            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
-        </div>
-
-        <!-- الشريحة 5: حق اللعب -->
-        <div id="slide5" class="slide hidden">
-            <div></div>
-            <div class="question-box">
-                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">⚽ الموقف الثالث: أطفال يمارسون الألعاب والأنشطة الرياضية بحرية وأمان</h2>
-                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق؟</p>
-            </div>
-
-            <div class="options-container">
-                <div class="choice-card" onclick="wrongChoice()">حق العمل الثقيل</div>
-                <div class="choice-card" onclick="rightChoice('slide6')">حق اللعب والترفيه ⚽</div>
-            </div>
-
-            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
-        </div>
-
-        <!-- الشريحة 6: حق الحماية -->
-        <div id="slide6" class="slide hidden">
-            <div></div>
-            <div class="question-box">
-                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">🛡️ الموقف الرابع: طفل يعيش في بيئة دافئة وآمنة محمية من كل خطر</h2>
-                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق الأساسي؟</p>
-            </div>
-
-            <div class="options-container">
-                <div class="choice-card" onclick="rightChoice('slide7')">حق الحماية والأمان 🛡️</div>
-                <div class="choice-card" onclick="wrongChoice()">حق البقاء وحدي بالخارج</div>
-            </div>
-
-            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
-        </div>
-
-        <!-- الشريحة 7: حق المشاركة والتعبير -->
-        <div id="slide7" class="slide hidden">
-            <div></div>
-            <div class="question-box">
-                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">💬 الموقف الخامس: طفل يعبر عن رأيه بكل ثقة ويشارك أفكاره المفيدة</h2>
-                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق الجميل؟</p>
-            </div>
-
-            <div class="options-container">
-                <div class="choice-card" onclick="rightChoice('endSlide')">حق المشاركة والتعبير عن الرأي 💬</div>
-                <div class="choice-card" onclick="wrongChoice()">حق منع الكلام</div>
-            </div>
-
-            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
-        </div>
-
-        <!-- شريحة النهاية والتتويج -->
-        <div id="endSlide" class="slide hidden">
-            <div></div>
-            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px;">
-                <h1 class="main-title" style="font-size: 40px;">🏆 مبروك لأبطالنا الرائعين! 🏆</h1>
-                <p style="font-size: 22px; color: #475569; font-weight: 700;">لقد اكتشفتم جميع حقوقكم بنجاح وذكاء تام!</p>
-                <button class="start-btn" onclick="location.reload()" style="margin-top: 10px; font-size: 20px;">إعادة اللعب من جديد 🔄</button>
-            </div>
-            <div></div>
-            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
-        </div>
-
-    </div>
-
-    <script>
-        function goTo(id) {
-            document.querySelectorAll('.slide').forEach(s => s.classList.add('hidden'));
-            document.getElementById(id).classList.remove('hidden');
-        }
-
-        function rightChoice(nextId) {
-            const synth = window.speechSynthesis;
-            if(synth) {
-                const utter = new SpeechSynthesisUtterance('أحسنت، رائع!');
-                utter.lang = 'ar-SA';
-                synth.speak(utter);
-            }
-            setTimeout(() => {
-                goTo(nextId);
-            }, 800);
-        }
-
-        function wrongChoice() {
-            const synth = window.speechSynthesis;
-            if(synth) {
-                const utter = new SpeechSynthesisUtterance('حاول مرة أخرى');
-                utter.lang = 'ar-SA';
-                synth.speak(utter);
-            }
-        }
-    </script>
-</body>
-</html>
+                <div class="choice-card" onclick="wrongChoice()">لعب وم
