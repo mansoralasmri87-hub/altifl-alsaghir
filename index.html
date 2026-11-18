@@ -8,49 +8,53 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-        body { background-color: #f0f7ff; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+        body { 
+            background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%); 
+            display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; 
+        }
         
         .game-container {
-            width: 1000px; height: 650px; background: #ffffff;
-            border: 6px solid #3399ff; border-radius: 30px;
-            position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 950px; height: 600px; background: #ffffff;
+            border: 5px solid #38bdf8; border-radius: 30px;
+            position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 25px; overflow: hidden;
         }
 
         .slide {
             display: flex; flex-direction: column; align-items: center; justify-content: space-between;
             width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: #ffffff;
-            transition: opacity 0.5s ease; padding: 35px 25px 20px 25px;
+            transition: opacity 0.4s ease; padding: 30px 20px 20px 20px;
         }
         .slide.hidden { opacity: 0; pointer-events: none; display: none; }
 
-        .title-text { color: #ff6b81; font-size: 36px; font-weight: 900; text-align: center; text-shadow: 2px 2px 0px #ffeaa7; }
+        .main-title { color: #f43f5e; font-size: 38px; font-weight: 900; text-align: center; margin-bottom: 5px; }
         
-        .note-box {
-            background: #fffdf0; border: 3px dashed #ffcc00; border-radius: 20px;
-            padding: 18px 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); width: 85%;
+        .question-box {
+            background: #fffbeb; border: 3px dashed #f59e0b; border-radius: 20px;
+            padding: 15px 25px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); width: 85%;
         }
 
-        .characters-area { display: flex; justify-content: space-around; width: 100%; align-items: flex-end; }
+        .characters-flex { display: flex; justify-content: space-around; width: 100%; align-items: center; }
 
-        .action-btn {
-            background-color: #ffcc00; color: #333; font-size: 22px; font-weight: 700;
-            padding: 12px 35px; border: none; border-radius: 50px; cursor: pointer;
-            box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4); transition: all 0.2s;
+        .start-btn {
+            background-color: #fbbf24; color: #1e293b; font-size: 24px; font-weight: 900;
+            padding: 12px 40px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4); transition: all 0.2s;
         }
-        .action-btn:hover { background-color: #ffbb00; transform: scale(1.06); }
+        .start-btn:hover { background-color: #f59e0b; transform: scale(1.05); }
 
-        .options-grid { display: flex; gap: 20px; justify-content: center; width: 100%; }
-        .option-card {
-            background: #f8f9fa; border: 3px solid #ced4da; border-radius: 18px; padding: 15px 25px;
-            font-size: 20px; font-weight: 700; color: #333; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        .options-container { display: flex; gap: 25px; justify-content: center; width: 100%; margin-top: 10px; }
+        .choice-card {
+            background: #f8fafc; border: 3px solid #cbd5e1; border-radius: 20px; padding: 18px 30px;
+            font-size: 20px; font-weight: 700; color: #334155; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            min-width: 280px; text-align: center;
         }
-        .option-card:hover { background: #e9ecef; border-color: #3399ff; transform: scale(1.03); }
+        .choice-card:hover { background: #f1f5f9; border-color: #38bdf8; transform: scale(1.03); color: #0284c7; }
 
-        .chest-container { text-align: center; cursor: pointer; transition: transform 0.3s; }
-        .chest-container:hover { transform: scale(1.1); }
+        .chest-box { text-align: center; cursor: pointer; transition: transform 0.3s; }
+        .chest-box:hover { transform: scale(1.08); }
 
-        .footer-brand { font-size: 15px; color: #666; font-weight: 700; letter-spacing: 0.5px; }
+        .brand-footer { font-size: 14px; color: #94a3b8; font-weight: 700; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
@@ -60,167 +64,161 @@
         <!-- الشريحة 1: المقدمة -->
         <div id="slide1" class="slide">
             <div></div>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-                <h1 class="title-text">🌟 يوم الطفل العالمي 🌟</h1>
-                <div style="font-size: 26px; color: #3399ff; font-weight: 700;">أهلاً بكم في مغامرة حقوق الطفل الممتعة!</div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <h1 class="main-title">🎈 يوم الطفل العالمي 🎈</h1>
+                <div style="font-size: 24px; color: #0284c7; font-weight: 700;">أهلاً بكم في مغامرة حقوق الطفل الممتعة!</div>
             </div>
 
-            <div class="characters-area">
-                <!-- شخصية طفلة كرتونية مبهجة -->
-                <svg width="150" height="180" viewBox="0 0 200 250">
-                    <circle cx="100" cy="70" r="45" fill="#ffdbac"/>
-                    <!-- شعر جميل ومرتب -->
-                    <path d="M50,65 Q100,10 150,65 Q160,120 130,120 Q100,90 70,120 Q40,120 50,65 Z" fill="#654321"/>
-                    <circle cx="85" cy="68" r="6" fill="#222"/><circle cx="115" cy="68" r="6" fill="#222"/>
-                    <path d="M85,85 Q100,100 115,85" fill="none" stroke="#ff6b81" stroke-width="4" stroke-linecap="round"/>
-                    <!-- فستان ملون ومرح للطفلة -->
-                    <path d="M70,115 L130,115 L145,190 L55,190 Z" fill="#ff6b81" stroke="#333" stroke-width="3"/>
-                    <circle cx="100" cy="140" r="8" fill="#ffeaa7"/>
-                    <path d="M75,190 L85,230 L95,230 L85,190 Z" fill="#ffdbac"/><path d="M105,190 L115,230 L125,230 L115,190 Z" fill="#ffdbac"/>
+            <div class="characters-flex">
+                <!-- رسومات طفلة مبهجة وواضحة -->
+                <svg width="130" height="160" viewBox="0 0 200 250">
+                    <circle cx="100" cy="75" r="45" fill="#fbcfe8"/>
+                    <path d="M50,70 Q100,10 150,70 Q150,130 120,130 Q100,100 80,130 Q50,130 50,70 Z" fill="#881337"/>
+                    <circle cx="85" cy="70" r="6" fill="#1e293b"/><circle cx="115" cy="70" r="6" fill="#1e293b"/>
+                    <path d="M85,90 Q100,105 115,90" fill="none" stroke="#f43f5e" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M65,120 L135,120 L145,195 L55,195 Z" fill="#f43f5e"/>
+                    <circle cx="100" cy="150" r="10" fill="#fff"/>
                 </svg>
 
-                <button class="action-btn" onclick="nextSlide('slide2')">ابدأ المغامرة 🚀</button>
+                <button class="start-btn" onclick="goTo('slide2')">ابدأ المغامرة 🚀</button>
 
-                <!-- شخصية طفل كرتوني مرح -->
-                <svg width="150" height="180" viewBox="0 0 200 250">
-                    <circle cx="100" cy="70" r="45" fill="#ffdbac"/>
-                    <!-- شعر ولد كرتوني -->
-                    <path d="M55,60 Q100,20 145,60 Q130,40 100,35 Q70,40 55,60 Z" fill="#333"/>
-                    <circle cx="85" cy="68" r="6" fill="#222"/><circle cx="115" cy="68" r="6" fill="#222"/>
-                    <path d="M85,85 Q100,100 115,85" fill="none" stroke="#3399ff" stroke-width="4" stroke-linecap="round"/>
-                    <!-- تيشرت أبيض وبنطال أزرق مرح -->
-                    <path d="M70,115 L130,115 L140,190 L60,190 Z" fill="#ffffff" stroke="#333" stroke-width="3"/>
-                    <circle cx="100" cy="140" r="8" fill="#ffcc00"/>
-                    <path d="M75,190 L75,230 L90,230 L90,190 Z" fill="#3399ff"/><path d="M110,190 L110,230 L125,230 L125,190 Z" fill="#3399ff"/>
+                <!-- رسومات طفل كرتوني مبهج -->
+                <svg width="130" height="160" viewBox="0 0 200 250">
+                    <circle cx="100" cy="75" r="45" fill="#bae6fd"/>
+                    <path d="M55,65 Q100,20 145,65 Q130,40 100,35 Q70,40 55,65 Z" fill="#0f172a"/>
+                    <circle cx="85" cy="70" r="6" fill="#1e293b"/><circle cx="115" cy="70" r="6" fill="#1e293b"/>
+                    <path d="M85,90 Q100,105 115,90" fill="none" stroke="#0284c7" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M65,120 L135,120 L145,195 L55,195 Z" fill="#38bdf8"/>
+                    <circle cx="100" cy="150" r="10" fill="#fff"/>
                 </svg>
             </div>
 
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
-        <!-- الشريحة 2: صندوق المفاجآت -->
+        <!-- الشريحة 2: الصندوق السحري -->
         <div id="slide2" class="slide hidden">
             <div></div>
-            <div class="note-box">
-                <h2 style="color: #ff6b81; font-size: 26px; margin-bottom: 5px;">🎁 الصندوق السحري مقفل! 🎁</h2>
-                <p style="color: #555; font-size: 18px;">هل تستطيعون مساعدتنا في فتحه لنكتشف حقوقنا الجميلة؟</p>
+            <div class="question-box">
+                <h2 style="color: #f43f5e; font-size: 24px; margin-bottom: 5px;">🎁 الصندوق السحري مغلق! 🎁</h2>
+                <p style="color: #475569; font-size: 18px;">هل تساعدوننا في فتحه لنكتشف حقوقنا الجميلة معاً؟</p>
             </div>
 
-            <div class="chest-container" onclick="nextSlide('slide3')">
-                <svg width="160" height="120" viewBox="0 0 200 150">
-                    <rect x="20" y="50" width="160" height="90" rx="15" fill="#d35400" stroke="#333" stroke-width="4"/>
-                    <path d="M20,70 L180,70" stroke="#333" stroke-width="4"/>
-                    <rect x="85" y="60" width="30" height="40" rx="5" fill="#f1c40f" stroke="#333" stroke-width="3"/>
-                    <circle cx="100" cy="80" r="5" fill="#333"/>
+            <div class="chest-box" onclick="goTo('slide3')">
+                <svg width="150" height="110" viewBox="0 0 200 150">
+                    <rect x="20" y="50" width="160" height="90" rx="15" fill="#d97706" stroke="#1e293b" stroke-width="4"/>
+                    <path d="M20,70 L180,70" stroke="#1e293b" stroke-width="4"/>
+                    <rect x="85" y="60" width="30" height="40" rx="5" fill="#fbbf24" stroke="#1e293b" stroke-width="3"/>
+                    <circle cx="100" cy="80" r="5" fill="#1e293b"/>
                 </svg>
-                <div style="font-weight: 700; color: #d35400; margin-top: 8px; font-size: 20px;">اضغط هنا لفتح الصندوق! 🔑</div>
+                <div style="font-weight: 800; color: #d97706; margin-top: 8px; font-size: 20px;">اضغط هنا لفتح الصندوق! 🔑</div>
             </div>
 
-            <div style="height: 10px;"></div>
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div style="height: 5px;"></div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
         <!-- الشريحة 3: حق الصحة -->
         <div id="slide3" class="slide hidden">
             <div></div>
-            <div class="note-box">
-                <h2 style="color: #3399ff; font-size: 24px; margin-bottom: 8px;">🩺 الموقف الأول: صديقتنا تشعر بالتعب وتحتاج للرعاية الطبية</h2>
-                <p style="color: #555; font-size: 18px;">فكروا جيداً.. ما هو الحق المناسب هنا؟</p>
+            <div class="question-box">
+                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">🩺 الموقف الأول: صديقتنا تشعر بالتعب وتحتاج للرعاية الطبية</h2>
+                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو الحق المناسب هنا؟</p>
             </div>
 
-            <div class="options-grid">
-                <div class="option-card" onclick="wrongAnswer()">لعب ومرح في الحديقة</div>
-                <div class="option-card" onclick="correctAnswer('slide4')">حق الصحة والعلاج 🩺</div>
+            <div class="options-container">
+                <div class="choice-card" onclick="wrongChoice()">لعب ومرح في الحديقة</div>
+                <div class="choice-card" onclick="rightChoice('slide4')">حق الصحة والعلاج 🩺</div>
             </div>
 
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
         <!-- الشريحة 4: حق التعليم -->
         <div id="slide4" class="slide hidden">
             <div></div>
-            <div class="note-box">
-                <h2 style="color: #3399ff; font-size: 24px; margin-bottom: 8px;">📚 الموقف الثاني: طفل يحمل حقيبته متوجهاً للمدرسة ليتعلم العلوم</h2>
-                <p style="color: #555; font-size: 18px;">فكروا جيداً.. ما هو هذا الحق الرائع؟</p>
+            <div class="question-box">
+                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">📚 الموقف الثاني: طفل يحمل حقيبته متوجهاً للمدرسة ليتعلم العلوم</h2>
+                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق الرائع؟</p>
             </div>
 
-            <div class="options-grid">
-                <div class="option-card" onclick="correctAnswer('slide5')">حق التعليم والمعرفة 📚</div>
-                <div class="option-card" onclick="wrongAnswer()">حق النوم طوال اليوم</div>
+            <div class="options-container">
+                <div class="choice-card" onclick="rightChoice('slide5')">حق التعليم والمعرفة 📚</div>
+                <div class="choice-card" onclick="wrongChoice()">حق النوم طوال اليوم</div>
             </div>
 
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
         <!-- الشريحة 5: حق اللعب -->
         <div id="slide5" class="slide hidden">
             <div></div>
-            <div class="note-box">
-                <h2 style="color: #3399ff; font-size: 24px; margin-bottom: 8px;">⚽ الموقف الثالث: أطفال يمارسون الألعاب والأنشطة الرياضية بحرية وأمان</h2>
-                <p style="color: #555; font-size: 18px;">فكروا جيداً.. ما هو هذا الحق؟</p>
+            <div class="question-box">
+                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">⚽ الموقف الثالث: أطفال يمارسون الألعاب والأنشطة الرياضية بحرية وأمان</h2>
+                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق؟</p>
             </div>
 
-            <div class="options-grid">
-                <div class="option-card" onclick="wrongAnswer()">حق العمل الثقيل</div>
-                <div class="option-card" onclick="correctAnswer('slide6')">حق اللعب والترفيه ⚽</div>
+            <div class="options-container">
+                <div class="choice-card" onclick="wrongChoice()">حق العمل الثقيل</div>
+                <div class="choice-card" onclick="rightChoice('slide6')">حق اللعب والترفيه ⚽</div>
             </div>
 
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
         <!-- الشريحة 6: حق الحماية -->
         <div id="slide6" class="slide hidden">
             <div></div>
-            <div class="note-box">
-                <h2 style="color: #3399ff; font-size: 24px; margin-bottom: 8px;">🛡️ الموقف الرابع: طفل يعيش في بيئة دافئة وآمنة محمية من كل خطر</h2>
-                <p style="color: #555; font-size: 18px;">فكروا جيداً.. ما هو هذا الحق الأساسي؟</p>
+            <div class="question-box">
+                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">🛡️ الموقف الرابع: طفل يعيش في بيئة دافئة وآمنة محمية من كل خطر</h2>
+                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق الأساسي؟</p>
             </div>
 
-            <div class="options-grid">
-                <div class="option-card" onclick="correctAnswer('slide7')">حق الحماية والأمان 🛡️</div>
-                <div class="option-card" onclick="wrongAnswer()">حق البقاء وحدي بالخارج</div>
+            <div class="options-container">
+                <div class="choice-card" onclick="rightChoice('slide7')">حق الحماية والأمان 🛡️</div>
+                <div class="choice-card" onclick="wrongChoice()">حق البقاء وحدي بالخارج</div>
             </div>
 
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
         <!-- الشريحة 7: حق المشاركة والتعبير -->
         <div id="slide7" class="slide hidden">
             <div></div>
-            <div class="note-box">
-                <h2 style="color: #3399ff; font-size: 24px; margin-bottom: 8px;">💬 الموقف الخامس: طفل يعبر عن رأيه بكل ثقة ويشارك أفكاره المفيدة</h2>
-                <p style="color: #555; font-size: 18px;">فكروا جيداً.. ما هو هذا الحق الجميل؟</p>
+            <div class="question-box">
+                <h2 style="color: #0284c7; font-size: 22px; margin-bottom: 6px;">💬 الموقف الخامس: طفل يعبر عن رأيه بكل ثقة ويشارك أفكاره المفيدة</h2>
+                <p style="color: #475569; font-size: 17px;">فكروا جيداً.. ما هو هذا الحق الجميل؟</p>
             </div>
 
-            <div class="options-grid">
-                <div class="option-card" onclick="correctAnswer('finishSlide')">حق المشاركة والتعبير عن الرأي 💬</div>
-                <div class="option-card" onclick="wrongAnswer()">حق منع الكلام</div>
+            <div class="options-container">
+                <div class="choice-card" onclick="rightChoice('endSlide')">حق المشاركة والتعبير عن الرأي 💬</div>
+                <div class="choice-card" onclick="wrongChoice()">حق منع الكلام</div>
             </div>
 
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
         <!-- شريحة النهاية والتتويج -->
-        <div id="finishSlide" class="slide hidden">
+        <div id="endSlide" class="slide hidden">
             <div></div>
-            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                <h1 class="title-text" style="font-size: 42px;">🏆 مبروك لأبطالنا الرائعين! 🏆</h1>
-                <p style="font-size: 24px; color: #555; font-weight: 700;">لقد اكتشفتم جميع حقوقكم بنجاح وذكاء تام!</p>
-                <button class="action-btn" onclick="location.reload()" style="margin-top: 10px;">إعادة اللعب من جديد 🔄</button>
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <h1 class="main-title" style="font-size: 40px;">🏆 مبروك لأبطالنا الرائعين! 🏆</h1>
+                <p style="font-size: 22px; color: #475569; font-weight: 700;">لقد اكتشفتم جميع حقوقكم بنجاح وذكاء تام!</p>
+                <button class="start-btn" onclick="location.reload()" style="margin-top: 10px; font-size: 20px;">إعادة اللعب من جديد 🔄</button>
             </div>
             <div></div>
-            <div class="footer-brand">يوم الطفل العالمي - مركز الطفل الصغير</div>
+            <div class="brand-footer">يوم الطفل العالمي - مركز الطفل الصغير</div>
         </div>
 
     </div>
 
     <script>
-        function nextSlide(slideId) {
+        function goTo(id) {
             document.querySelectorAll('.slide').forEach(s => s.classList.add('hidden'));
-            document.getElementById(slideId).classList.remove('hidden');
+            document.getElementById(id).classList.remove('hidden');
         }
 
-        function correctAnswer(nextId) {
+        function rightChoice(nextId) {
             const synth = window.speechSynthesis;
             if(synth) {
                 const utter = new SpeechSynthesisUtterance('أحسنت، رائع!');
@@ -228,11 +226,11 @@
                 synth.speak(utter);
             }
             setTimeout(() => {
-                nextSlide(nextId);
+                goTo(nextId);
             }, 800);
         }
 
-        function wrongAnswer() {
+        function wrongChoice() {
             const synth = window.speechSynthesis;
             if(synth) {
                 const utter = new SpeechSynthesisUtterance('حاول مرة أخرى');
